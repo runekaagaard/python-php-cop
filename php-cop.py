@@ -41,9 +41,9 @@ class PhpCop(object):
                 color = "default"
             else:
                 color = "warn"
-            parts.append(urwid.AttrWrap(urwid.Text(error), color))
+            parts.append(urwid.AttrWrap(urwid.Text(error, wrap='clip'), color))
             for s in stacktraces:
-                parts.append(urwid.AttrWrap(urwid.Text(s), "stacktrace"))
+                parts.append(urwid.AttrWrap(urwid.Text(s, wrap='clip'), "stacktrace"))
             i += 1
         return urwid.Columns([urwid.ListBox(parts)], dividechars=1, focus_column=0)
 
